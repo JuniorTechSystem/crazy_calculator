@@ -7,5 +7,6 @@ calc_route_bp = Blueprint("calc_routes", __name__)
 def calculator_1():
     print(request.json)
     calc = Calculator1()
-    calc.calculate(request)
-    return jsonify({"succes": True}), 200
+    response = calc.calculate(request)
+
+    return jsonify(response), 200
